@@ -1,0 +1,32 @@
+1. Complete the following “truth table” for the logical operator OR.
+a       |   b       |   a or b
+True    |   True    |   True
+True    |   False   |   True
+False   |   True    |   True
+False   |   False   |   False
+
+
+2. Complete the following “truth table” for the logical operator AND.
+a       |   b       |   a and b
+True    |   True    |   True
+True    |   False   |   False
+False   |   True    |   False
+False   |   False   |   False
+
+
+3. Complete the following “truth table” for the logical operator NOT.
+a       |   not a
+True    |   False
+False   |   True
+
+
+4. Figure out exactly, line for line, what the output on the screen will be for 
+each of the following programs. For each of these programs, x is 2 and y is 3
+a. output:
+x = 2 y = 3
+sum = 5
+
+b. output:
+x = 3 y = 4
+
+c. output: (empty)
