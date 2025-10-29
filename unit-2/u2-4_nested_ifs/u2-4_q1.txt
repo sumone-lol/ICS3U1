@@ -1,0 +1,41 @@
+Compare these two programs. What do the programs output AND which program
+do you think is more efficient
+
+Program A:
+x = int(input("Enter a value for x: "))
+y = int(input("Enter a value for y: "))
+z = int(input("Enter a value for z: "))
+
+if (x >= y):                # y isn't biggest
+    if (x >= z):            # y, z not biggest
+        print("x is the biggest")
+    else:                   # y, x not biggest
+        print("z is the biggest")
+elif (y >= z):              # x, z not biggest
+    print("y is the biggest")
+else:                       # x, y not biggest
+    print("z is the biggest")
+
+
+
+Program B:
+x = int(input("Enter a value for x: "))
+y = int(input("Enter a value for y: "))
+z = int(input("Enter a value for z: "))
+
+if (x >= y) and (x >= z): # x is biggest
+    print("x is the biggest")
+elif (y >= z): # x isn't biggest
+    print("y is the biggest")
+else: # x, y not biggest
+    print("z is the biggest")
+
+
+
+Both programs ask the user for three numbers (internally stored as integers) 
+and output a response stating the largest number of the three. Program A uses 
+nested if statements while program B uses logical operators to combine 
+conditions. I think program B is more efficient because the conditions are 
+compared in a single if statement rather than two separate ones. Nested ifs 
+can allow for more complex decision structure with multiple possible branches, 
+but that is not necessary for this particular use case.

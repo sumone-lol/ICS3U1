@@ -1,0 +1,12 @@
+Consider the following statement.
+if (age > min_age):
+    if (income > min_income):
+        print("Accept")
+    else:
+        print("Reject")
+
+a. What will the statement print if (age > min_age) and (income < min_income)?
+Reject
+
+b. What will the statement print if (age < min_age) and (income < min_income)?
+(empty)
