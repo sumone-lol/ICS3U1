@@ -1,0 +1,64 @@
+String Manipulation Written Questions
+Consider the following variables and then for the subsequent pieces of code,
+determine the output:
+
+school = “Northview”
+name = “Ayesha”
+age = 15
+
+# 1.
+print(school[3:5])
+
+# th
+
+-------------------
+
+# 2.
+letter = name[2]
+print(letter)
+
+# e
+
+-------------------
+
+# 3.
+if name == “Mohammed”:
+    print(“My teacher”)
+else:
+    print(“Z” + school[1:4])
+
+# Zort
+
+-------------------
+
+# 4.
+if len(school) < 10:
+    print(name[4]*5)
+else:
+    print(name[3]*3)
+
+# hhhhh
+
+-------------------
+
+# 5.
+new = age + 6
+new2 = str(new)
+print(new2[0])
+
+# 2
+
+-------------------
+
+# 6.
+new = age + 10 # 25
+new2 = str(new) # "25"
+new3 = new2[1] "5"
+if new3 == “5” and new2[0] == “1”:
+    print(“Red”)
+elif new3 == “5” or new2[0] == “1”:
+    print(“Blue”)
+else:
+    print(“Green”)
+
+# Blue
