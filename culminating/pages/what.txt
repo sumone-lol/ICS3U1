@@ -1,0 +1,21 @@
+Natural resources are useful materials that are created in the environment without human intervention. 
+Everything man-made can always be traced back to natural resources, no matter how artificial or processed it 
+may seem. Natural resources are often categorized as renewable and non-renewable resources based on the 
+duration of synthesis. Renewables typically replenish in the span of a human lifetime whereas non-renewables 
+could take upwards of a thousand years.
+
+Examples of renewable resources:
+- Rainwater
+- Sunlight
+- Trees and lumber
+
+Examples of non-renewable resources;
+- Minerals and metals
+- Petroleum
+- Helium
+
+Applications and uses:
+- Furniture and housing
+- Industrial processes
+- Agriculture
+- Electronic devices
