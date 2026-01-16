@@ -3,6 +3,7 @@
 # Description: An interactive lesson about natural resources
 
 import random
+import datetime
 import sys
 import functions
 
@@ -169,23 +170,34 @@ def page_quiz():
     print("\n", "-"*20, "\n")
 
     # Initialize quiz answers and scores
-    user_answers = []
-    correct_answers = ("a", "b", "c", "d")
     score = 0
+    user_answers = []
+    correct_answers = ("a", "b", "c", "d", "e")
+    with open("pages/quiz.txt") as f:
+        questions = f.readlines()
 
     # Prompt user for answers
-    print("Question 1: ahciskmhfsfe")
-    user_answers.append(input("Enter your answer: "))
-    print("Question 2: ahciskmhfsfe")
-    user_answers.append(input("Enter your answer: "))
-    print("Question 3: ahciskmhfsfe")
-    user_answers.append(input("Enter your answer: "))
-    print("Question 4: ahciskmhfsfe")
-    user_answers.append(input("Enter your answer: "))
+    for i in range(len(correct_answers)):
+        print(questions[i * 2])
+        print(questions[i * 2 + 1].replace("\\n", "\n"))
+        user_answers.append(input("Enter your answer: "))
 
     # Score calculation
     for i in range(len(user_answers)):
         if user_answers[i].lower() == correct_answers[i]:
             score += 1
+    
+    # Write results to timestamped log file
+    def quiz_log():
+        with open(f"quiz_{datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")}.log", "a") as f:
+            f.write(f"Score: {score} / {len(user_answers)}\n\n")
+            for i in range(len(correct_answers)):
+                f.write(questions[i * 2])
+                f.write(questions[i * 2 + 1].replace("\\n", "\n"))
+                f.write(f"Your answer: {user_answers[i]}\n")
+                f.write(f"Correct answer: {correct_answers[i]}\n")
+                f.write("\n----------\n\n")
+    
+    quiz_log() # Might ask whether to log quiz results.
 
 page_mainMenu()
