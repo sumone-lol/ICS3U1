@@ -218,19 +218,28 @@ def page_quiz():
     print("Time for a quiz!")
     time.sleep(1)
 
-    # Initialize quiz questions, answers, and score
-    # I'm avoiding text-input answers because of ambiguity
+    # Initialize quiz questions, options, answers, and score
     score = 0
+    questions = []
+    options = []
     user_answers = []
-    correct_answers = ("b", "a", "a", "bcd", "d", "b", "b", "a")
+    correct_answers = ["b", "a", "a", "bcd", "d", "b", "b", "a"]
     with open("pages/quiz.txt") as f:
-        questions = f.readlines()
+        quiz = f.readlines()
+    for i in range(len(correct_answers)):
+        questions.append(quiz[i * 2])
+        options.append(quiz[i * 2 + 1])
+    
+    # Shuffle questions, options, and answers together
+    shuffle = list(zip(questions, options, correct_answers))
+    random.shuffle(shuffle)
+    questions, options, correct_answers = zip(*shuffle)
 
     # Ask questions and prompt user for answers
     for i in range(len(correct_answers)):
         time.sleep(TOOLTIP_DELAY)
-        print("\n" + questions[i * 2])
-        print(questions[i * 2 + 1].replace("\\n", "\n"))
+        print("\n" + questions[i])
+        print(options[i].replace("\\n", "\n"))
         user_answers.append(input("Enter your answer: ").strip().lower())
 
     # Score calculation
@@ -241,20 +250,22 @@ def page_quiz():
     # Write results to timestamped log file
     def quiz_log():
         with open(f"quiz_{datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")}.log", "a") as f:
-            f.write(f"Score: {score} / {len(user_answers)}\n\n")
+            f.write(f"Score: {score} / {len(correct_answers)}\n\n")
             for i in range(len(correct_answers)):
-                f.write(questions[i * 2])
-                f.write(questions[i * 2 + 1].replace("\\n", "\n"))
-                f.write(f"Your answer: {user_answers[i]}\n")
+                f.write(questions[i])
+                f.write(options[i].replace("\\n", "\n"))
+                f.write(f"\nYour answer: {user_answers[i]}\n")
                 f.write(f"Correct answer: {correct_answers[i]}\n")
                 f.write("\n----------\n\n")
     
      # I might add an option to make logging optional later...
     quiz_log()
     time.sleep(TOOLTIP_DELAY)
-    print(f"\nScore: {score}")
-    print("A log of your quiz results was created in the root folder!")
     print("\n" + "-"*10 + "\n")
+    print(f"Score: {score} / {len(correct_answers)}")
+    print("A log of your quiz results was created in the project folder!")
+    print("\n" + "-"*10 + "\n")
+    time.sleep(TOOLTIP_DELAY)
     page_mainMenu()
 
 # Initialize the program at the main menu
