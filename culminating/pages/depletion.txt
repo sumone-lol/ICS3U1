@@ -1,4 +1,5 @@
-Yes, we are. The primary concerns are of non-renewable resources such as petroleum and natural gas, but 
+Yes, we are.
+The primary concerns are of non-renewable resources such as petroleum and natural gas, but 
 climate change and other factors are impacting renewables as well. For instance, forest fires reduce the 
 amount of trees that absorb carbon dioxide, accelerating climate change and contributing to more forest 
 fires in a positive feedback loop. And increasingly recently, AI data centres are using billions of cubic 

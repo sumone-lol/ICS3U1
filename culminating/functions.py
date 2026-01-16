@@ -2,7 +2,7 @@
 # Function to collect user option given a list of valid options
 def optionInput(valid):
     while True:
-        option = input("\nEnter option: ")
+        option = input("\nEnter option: ").strip().lower()
         for i in valid:
             if option != i:
                 continue
