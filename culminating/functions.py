@@ -1,5 +1,4 @@
-
-# Function to collect user option given a list of valid options
+# Function to collect user input given a list of valid options
 def optionInput(valid):
     while True:
         option = input("\nEnter option: ").strip().lower()

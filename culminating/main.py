@@ -1,4 +1,4 @@
-# Name: 
+# Name: Vicky Y.
 # Date: 20-01-2026
 # Description: An interactive lesson about natural resources
 
@@ -41,7 +41,7 @@ def page_selectMenu():
     functions.optionTooltips(OPTIONS, [ \
         "What are natural resources?",
         "Obtaining natural resources",
-        "Why are natural resources impotrant?",
+        "Why are natural resources important?",
         "Are we running out?",
         "Quiz!",
         "Back"
